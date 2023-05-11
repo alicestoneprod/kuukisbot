@@ -1,4 +1,4 @@
-FROM node:12-alpha
+FROM node:16-alpha
 WORKDIR /app
 COPY . /app
 RUN npm install
