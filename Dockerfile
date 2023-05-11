@@ -1,5 +1,4 @@
-bashCopy code
-FROM node:14
+FROM node:12-alpha
 WORKDIR /app
 COPY . /app
 RUN npm install
