@@ -236,11 +236,6 @@ bot.on('message', (msg) => {
                 else if ((msg.text.toLowerCase() == '/anek') || (msg.text.toLowerCase() == 'анекдот')){
                   bot.sendMessage(chatId, `Пожалуйста, укажите тему анекдота. Например, Анекдот для друзей. Доступные темы: ${themes}, этот же список можно получить при вводе команды /help.`)
                   }
-                while (1>0){
-                  setTimeout(() => {
-                    bot.sendMessage(5628425402, `Обход sleep mode.`)
-                  }, 1500000);
-                }
           
               fs.appendFile('logs.txt', `\nСообщение: '${msg.text}' было получено в ${time.getHours()}h ${time.getMinutes()}m- ${time.getDay()}.${time.getMonth()}.${time.getFullYear()} и написано пользователем @${msg.chat.username}`, (err) => {})});
 
