@@ -7,10 +7,41 @@ const axios = require('axios');
 const express = require('express');
 const app = express();
 
-app.listen(8080, () => {
-  console.log('Server is running on port 8080');
+// Ручка для проверки доступности сервера
+app.get('/', (req, res) => {
+  res.send('Server is running');
 });
 
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
+
+  // Функция, отправляющая запрос каждые 5 минут
+  function keepServerAlive() {
+    // Используйте модуль http или axios для отправки запроса
+    const http = require('http');
+    const options = {
+      host: 'localhost',
+      port: 8080,
+      path: '/'
+    };
+
+    const req = http.request(options, (res) => {
+      console.log('Keep-alive request sent');
+    });
+
+    req.on('error', (err) => {
+      console.error('An error occurred:', err.message);
+    });
+
+    req.end();
+  }
+
+  // Отправка первого запроса сразу при запуске сервера
+  keepServerAlive();
+
+  // Отправка запросов каждые 5 минут (300 000 миллисекунд)
+  setInterval(keepServerAlive, 1500000);
+});
 
 let time = new Date();
 
