@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD [ "node", "telegram.js" ]
+CMD [ "node", "telegram.mjs" ]
