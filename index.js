@@ -92,10 +92,10 @@ bot.on('message', (msg) => {
   else if ((msg.text.toLowerCase() == 'решка') || (msg.text.toLowerCase() == 'орёл') || (msg.text.toLowerCase() == '/orel') || (msg.text.toLowerCase() == '/reshka') || (msg.text.toLowerCase() == 'орел')){
     const i = Math.round(Math.random());
     if (i == 1){
-      bot.sendMessage(chatId, 'Выпала Решка')
+      bot.sendMessage(chatId, '🪙')
     }
     else{
-      bot.sendMessage(chatId, 'Выпал Орёл')
+      bot.sendMessage(chatId, '🪙')
     }
       
     }
